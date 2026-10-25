@@ -1,0 +1,3171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="X-Fence — Professional fencing installation, replacement and repair services. Quality craftsmanship, built to last.">
+<title>X-Fence | Professional Fencing Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --charcoal: #1A1A1A;
+  --graphite: #2D2D2D;
+  --slate: #3E3E3E;
+  --stone: #D9CFC2;
+  --warm-white: #F2EDE7;
+  --off-white: #FAF8F5;
+  --copper: #B89862;
+  --copper-light: #CCAD78;
+  --copper-dark: #9A7D4C;
+  --bronze: #8B7A58;
+  --text-dark: #1A1A1A;
+  --text-light: #F2EDE7;
+  --text-muted: #7A7A7A;
+  --border-light: rgba(0,0,0,0.08);
+  --border-dark: rgba(255,255,255,0.1);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md: 0 8px 32px rgba(0,0,0,0.08);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,0.12);
+  --radius: 4px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --font-primary: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+html {
+  overflow-x: hidden;
+}
+body {
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  background: var(--off-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Subtle grain texture across sections */
+.about,
+.services,
+.gallery,
+.process,
+.area,
+.trust-bar,
+.footer {
+  position: relative;
+}
+
+.about::after,
+.services::after,
+.gallery::after,
+.process::after,
+.area::after,
+.trust-bar::after,
+.footer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+  mix-blend-mode: overlay;
+}
+.about::after { opacity: 0.035; }
+.services::after { opacity: 0.045; }
+.gallery::after { opacity: 0.03; }
+.process::after { opacity: 0.04; }
+.area::after { opacity: 0.035; }
+.trust-bar::after { opacity: 0.06; }
+.footer::after { opacity: 0.05; }
+
+/* ============ UTILITY ============ */
+.container { max-width: 1240px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+.container-wide { max-width: 1400px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+.section-label {
+  font-family: var(--font-primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--copper);
+}
+
+.section-title {
+  font-family: var(--font-primary);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--charcoal);
+  margin-bottom: 20px;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 14px 32px;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background: var(--copper);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: var(--copper-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(184, 152, 98, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--charcoal);
+  border: 2px solid var(--charcoal);
+}
+.btn-secondary:hover {
+  background: var(--charcoal);
+  color: var(--warm-white);
+}
+
+.btn-light {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.4);
+}
+.btn-light:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: #fff;
+}
+
+.btn-arrow::after {
+  content: '\2192';
+  transition: transform var(--transition);
+}
+.btn-arrow:hover::after { transform: translateX(4px); }
+
+/* ============ SCROLL REVEAL ============ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============ NAVIGATION ============ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 24px 0;
+  transition: all 0.4s ease;
+}
+.nav.scrolled {
+  background: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(20px);
+  padding: 12px 0;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.2);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+}
+
+.nav-logo img {
+  height: 48px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  transition: filter var(--transition), height var(--transition);
+}
+.nav.scrolled .nav-logo img {
+  height: 36px;
+  filter: brightness(0) saturate(100%) invert(72%) sepia(30%) saturate(500%) hue-rotate(5deg) brightness(92%);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  font-family: var(--font-primary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: color var(--transition);
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--copper);
+  transition: width var(--transition);
+}
+.nav-links a:hover { color: #fff; }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-cta .btn {
+  padding: 10px 24px;
+  font-size: 0.8rem;
+}
+
+.nav-mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav-mobile-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  transition: var(--transition);
+}
+.nav-mobile-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.nav-mobile-toggle.active span:nth-child(2) { opacity: 0; }
+.nav-mobile-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+.nav-mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--charcoal);
+  z-index: 999;
+  flex-direction: column;
+  padding: 80px 32px 32px;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  pointer-events: none;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+}
+.nav-mobile-menu.active {
+  display: flex;
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+.nav-mobile-menu a {
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: color var(--transition);
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  letter-spacing: 0.5px;
+}
+.nav-mobile-menu a:last-of-type:not(.btn) {
+  border-bottom: none;
+}
+.nav-mobile-menu a:hover { color: var(--copper); }
+.nav-mobile-menu .btn {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.85rem;
+  padding: 14px 24px;
+  border-bottom: none;
+  color: #fff;
+}
+.nav-mobile-menu-social {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.nav-mobile-menu-social a {
+  border-bottom: none;
+  padding: 0;
+  width: 36px;
+  height: 36px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.4);
+}
+.nav-mobile-menu-social a:hover {
+  background: var(--copper);
+  color: #fff;
+}
+
+/* ============ HERO ============ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--charcoal);
+}
+
+.silk-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(135deg, rgba(26,26,26,0.85) 0%, rgba(26,26,26,0.4) 60%, rgba(26,26,26,0.7) 100%);
+}
+
+.hero-pattern {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  opacity: 0.03;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 80px,
+    #fff 80px,
+    #fff 81px
+  );
+}
+
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 4;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  padding-top: 200px;
+  padding-bottom: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  animation: heroFadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+.hero-logo {
+  width: clamp(240px, 32vw, 400px);
+  height: auto;
+  margin-top: 4px;
+  margin-bottom: 6px;
+  filter: brightness(0) saturate(100%) invert(72%) sepia(30%) saturate(500%) hue-rotate(5deg) brightness(92%);
+}
+
+.hero-spacer {
+  flex: 1;
+}
+
+.hero-label {
+  font-family: var(--font-primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.hero-label::before {
+  content: '';
+  width: 40px;
+  height: 2px;
+  background: var(--copper);
+}
+.hero-label::after {
+  content: '';
+  width: 40px;
+  height: 2px;
+  background: var(--copper);
+}
+
+.hero h1 {
+  font-family: var(--font-primary);
+  font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.2;
+  margin-top: 4px;
+  margin-bottom: 16px;
+  max-width: 700px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+.hero h1 span {
+  color: var(--copper);
+}
+
+.hero-desc {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.65);
+  max-width: 480px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 48px;
+  margin-top: auto;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  justify-content: center;
+  width: 100%;
+}
+.hero-stat-number {
+  font-family: var(--font-primary);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--copper);
+  line-height: 1;
+}
+.hero-stat-label {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 6px;
+  letter-spacing: 0.5px;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.3);
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: var(--font-primary);
+}
+.hero-scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 1; transform: scaleY(1); }
+  50% { opacity: 0.4; transform: scaleY(0.6); }
+}
+
+/* ============ TRUST BAR ============ */
+.trust-bar {
+  background: var(--charcoal);
+  padding: 14px 0;
+  border-top: 1px solid var(--border-dark);
+}
+
+.trust-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  text-align: center;
+  padding: 6px 16px;
+  position: relative;
+}
+.trust-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background: rgba(255,255,255,0.08);
+}
+
+.trust-number {
+  font-family: var(--font-primary);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--copper);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.trust-label {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.5);
+  font-weight: 500;
+}
+
+.trust-google-icon {
+  margin-bottom: 4px;
+}
+.trust-stars {
+  font-size: 1rem;
+  color: #FBBC05;
+  letter-spacing: 2px;
+  vertical-align: middle;
+}
+
+/* ============ ABOUT + SERVICES WRAP ============ */
+.about-services-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.about {
+  padding: 120px 0 80px;
+  position: relative;
+  background: transparent;
+}
+.about::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 54px,
+    rgba(0,0,0,0.06) 54px,
+    rgba(0,0,0,0.06) 55px
+  );
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-images {
+  position: relative;
+}
+
+.about-img-main {
+  width: 100%;
+  height: 500px;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.about-img-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-img-inset {
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  width: 200px;
+  height: 200px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 6px solid var(--off-white);
+  box-shadow: var(--shadow-lg);
+}
+.about-img-inset img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-badge {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 120px;
+  height: 120px;
+  background: var(--copper);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+}
+.about-badge-number {
+  font-family: var(--font-primary);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+.about-badge-text {
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.8);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+.about-content .section-title { margin-top: 8px; }
+
+.about-text {
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.about-points {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 32px 0 40px;
+}
+.about-point {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--charcoal);
+}
+.about-point-icon {
+  width: 20px;
+  height: 20px;
+  background: var(--copper);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.about-point-icon svg { width: 10px; height: 10px; }
+
+/* ============ SERVICES ============ */
+.services {
+  padding: 60px 0 120px;
+  position: relative;
+  background: linear-gradient(to bottom, transparent 0%, var(--off-white) 140px, var(--off-white) 100%);
+}
+.services::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 54px,
+    rgba(0,0,0,0.05) 54px,
+    rgba(0,0,0,0.05) 55px
+  );
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.services-header .section-label { justify-content: center; }
+.services-header .section-label::before { display: none; }
+.services-header .section-subtitle { margin: 0 auto; }
+.services-header .section-title span {
+  color: var(--copper);
+  font-style: italic;
+}
+.services-header .section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--copper);
+  margin: 16px auto 0;
+  border-radius: 2px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  height: 420px;
+  cursor: pointer;
+  group: true;
+}
+
+.service-card-img {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.service-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.service-card:hover .service-card-img img {
+  transform: scale(1.08);
+}
+
+.service-card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(0deg, rgba(26,26,26,0.9) 0%, rgba(26,26,26,0.2) 50%, rgba(26,26,26,0.1) 100%);
+  transition: background var(--transition);
+}
+.service-card:hover .service-card-overlay {
+  background: linear-gradient(0deg, rgba(26,26,26,0.95) 0%, rgba(26,26,26,0.4) 60%, rgba(26,26,26,0.2) 100%);
+}
+
+.service-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  padding: 32px;
+}
+
+.service-card-number {
+  font-family: var(--font-primary);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--copper);
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.service-card h3 {
+  font-family: var(--font-primary);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.service-card p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.6;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, margin 0.4s ease;
+}
+.service-card:hover p {
+  max-height: 100px;
+  margin-bottom: 16px;
+}
+
+.service-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--copper);
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.service-card:hover .service-card-link {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============ WHY X-FENCE ============ */
+.why {
+  padding: 120px 0;
+  background: var(--charcoal);
+  position: relative;
+  overflow: hidden;
+}
+
+.why-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.why-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.45;
+}
+.why-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--charcoal) 0%, rgba(26,26,26,0.65) 30%, rgba(26,26,26,0.65) 70%, var(--charcoal) 100%);
+}
+.why .container { position: relative; z-index: 2; }
+
+.why::before {
+  content: 'X';
+  position: absolute;
+  right: -80px;
+  top: -60px;
+  font-family: var(--font-primary);
+  font-size: 500px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.015);
+  line-height: 1;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.why .section-title { color: #fff; }
+.why .section-subtitle { color: rgba(255,255,255,0.5); }
+
+.why-header {
+  margin-bottom: 64px;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.why-card {
+  background: rgba(0,0,0,0.55);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius);
+  padding: 40px;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.why-card:hover {
+  background: rgba(0,0,0,0.65);
+  border-color: rgba(184, 152, 98, 0.35);
+  transform: translateY(-2px);
+}
+
+.why-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 0;
+  background: var(--copper);
+  transition: height 0.4s ease;
+}
+.why-card:hover::before { height: 100%; }
+
+.why-card-number {
+  font-family: var(--font-primary);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgba(184, 152, 98, 0.35);
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+.why-card h3 {
+  font-family: var(--font-primary);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.why-card p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.7;
+}
+
+/* ============ GALLERY / OUR WORK ============ */
+.gallery {
+  padding: 120px 0;
+}
+
+.gallery-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 48px;
+}
+.gallery-header .section-title span {
+  color: var(--copper);
+  font-style: italic;
+}
+.gallery-header .section-title::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--copper);
+  margin-top: 14px;
+  border-radius: 2px;
+}
+
+.gallery-filter {
+  display: flex;
+  gap: 8px;
+}
+.gallery-filter-btn {
+  font-family: var(--font-primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 8px 20px;
+  border: 1px solid var(--border-light);
+  border-radius: 100px;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.gallery-filter-btn.active,
+.gallery-filter-btn:hover {
+  background: var(--charcoal);
+  color: #fff;
+  border-color: var(--charcoal);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 260px;
+  gap: 8px;
+}
+
+.gallery-item {
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.gallery-item:hover img { transform: scale(1.06); }
+
+.gallery-item-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(26,26,26,0.6) 100%);
+  opacity: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 16px;
+  transition: opacity var(--transition);
+}
+.gallery-item:hover .gallery-item-overlay {
+  opacity: 1;
+}
+.gallery-item-label {
+  font-family: var(--font-primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.gallery-item-icon {
+  width: 36px;
+  height: 36px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.gallery-item.span-2 { grid-column: span 2; }
+.gallery-item.span-row { grid-row: span 2; }
+
+.gallery-item.gallery-truncated { display: none !important; }
+
+.gallery-view-all-wrap {
+  text-align: center;
+  margin-top: 32px;
+}
+.gallery-view-all {
+  font-family: var(--font-primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 14px 40px;
+  border: 1.5px solid var(--copper);
+  border-radius: 100px;
+  background: transparent;
+  color: var(--copper);
+  cursor: pointer;
+  transition: var(--transition);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.gallery-view-all:hover {
+  background: var(--copper);
+  color: #fff;
+  border-color: var(--copper);
+}
+
+/* ============ BEFORE AFTER ============ */
+.before-after {
+  padding: 120px 0;
+  background: var(--warm-white);
+}
+
+.ba-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.ba-header .section-label { justify-content: center; }
+.ba-header .section-label::before { display: none; }
+.ba-header .section-subtitle { margin: 0 auto; }
+
+.ba-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+}
+
+.ba-slider {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  height: 400px;
+  cursor: col-resize;
+  user-select: none;
+}
+
+.ba-img {
+  position: absolute;
+  inset: 0;
+}
+.ba-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ba-img-after {
+  clip-path: inset(0 0 0 50%);
+}
+
+.ba-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background: #fff;
+  transform: translateX(-50%);
+  z-index: 5;
+  cursor: col-resize;
+}
+
+.ba-handle-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+.ba-handle-circle svg { color: var(--charcoal); }
+
+.ba-label {
+  position: absolute;
+  z-index: 4;
+  top: 16px;
+  padding: 6px 14px;
+  font-family: var(--font-primary);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 100px;
+}
+.ba-label-before {
+  left: 16px;
+  background: rgba(26,26,26,0.7);
+  color: #fff;
+}
+.ba-label-after {
+  right: 16px;
+  background: var(--copper);
+  color: #fff;
+}
+
+/* ============ REVIEWS ============ */
+.reviews {
+  padding: 48px 0;
+  background: #151515;
+  color: var(--warm-white);
+}
+.reviews-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+.reviews-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.reviews-badge svg { flex-shrink: 0; }
+.reviews-badge-stars {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+.reviews-badge-score {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--warm-white);
+}
+.reviews-stars {
+  color: #FBBC05;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+.reviews-badge-text {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.03em;
+}
+.reviews-google-link {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--copper);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color var(--transition);
+}
+.reviews-google-link:hover { color: var(--copper-light); }
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.review-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+.review-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.review-stars {
+  color: #FBBC05;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
+.review-tag {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--copper);
+  background: rgba(184,152,98,0.12);
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+.review-text {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 14px;
+}
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.review-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--copper);
+  color: var(--charcoal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 0.7rem;
+}
+.review-author-info {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.review-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 0.82rem;
+}
+.review-date {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.35);
+}
+.review-verified {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.3);
+  margin-top: 2px;
+}
+.review-verified svg { flex-shrink: 0; }
+
+/* ============ PROCESS ============ */
+.process {
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+}
+.process-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.process-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.06;
+  filter: grayscale(1);
+}
+.process .container {
+  position: relative;
+  z-index: 2;
+}
+
+.process-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+.process-header .section-label { justify-content: center; }
+.process-header .section-label::before { display: none; }
+.process-header .section-subtitle { margin: 0 auto; }
+
+.process-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+  counter-reset: step;
+}
+
+.process-step {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  position: relative;
+  transition: var(--transition);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+.process-step:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--copper);
+}
+.process-step::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--copper);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.process-step:hover::before { transform: scaleX(1); }
+
+.process-step-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--copper);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.process-step-icon svg { width: 22px; height: 22px; color: #fff; }
+
+.process-step-number {
+  font-family: var(--font-primary);
+  font-size: 3rem;
+  font-weight: 700;
+  color: rgba(0,0,0,0.12);
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  line-height: 1;
+}
+
+.process-step h3 {
+  font-family: var(--font-primary);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 8px;
+}
+
+.process-step p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ============ QUOTE / CTA ============ */
+.quote-section {
+  padding: 120px 0;
+  background: var(--charcoal);
+  position: relative;
+  overflow: hidden;
+}
+
+.quote-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 54px,
+    #fff 54px,
+    #fff 55px
+  );
+}
+
+.quote-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: auto;
+  opacity: 0.04;
+  z-index: 1;
+  pointer-events: none;
+  filter: brightness(0) invert(1);
+}
+
+.quote-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 80px;
+  align-items: start;
+  position: relative;
+  z-index: 2;
+}
+
+.quote-content .section-title { color: #fff; }
+.quote-content .section-subtitle { color: rgba(255,255,255,0.5); margin-bottom: 40px; }
+
+.quote-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.quote-features li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+}
+.quote-features li svg {
+  width: 18px;
+  height: 18px;
+  color: var(--copper);
+  flex-shrink: 0;
+}
+
+.quote-form {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(184,152,98,0.25);
+  border-radius: var(--radius);
+  padding: 40px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.3), 0 0 0 1px rgba(184,152,98,0.08);
+}
+
+.quote-form-title {
+  font-family: var(--font-primary);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 24px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.form-row.full { grid-template-columns: 1fr; }
+
+.form-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 6px;
+  font-family: var(--font-primary);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  transition: border-color var(--transition);
+  outline: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--copper);
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255,255,255,0.25);
+}
+.form-group select {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23B89862' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 12px;
+  padding-right: 44px;
+}
+.form-group select:hover {
+  border-color: var(--copper);
+  background-color: rgba(255,255,255,0.08);
+}
+.form-group select option { background: var(--graphite); color: #fff; padding: 8px; }
+.form-group textarea { resize: vertical; min-height: 100px; }
+
+.quote-form .btn { width: 100%; justify-content: center; margin-top: 8px; }
+
+/* ============ SERVICE AREA ============ */
+.area {
+  padding: 56px 0;
+  background: var(--warm-white);
+}
+
+.area-inner {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.area-left {
+  flex-shrink: 0;
+}
+.area-left .section-label { margin-bottom: 8px; }
+.area-left .section-title { font-size: clamp(1.5rem, 2.8vw, 2rem); margin-bottom: 8px; }
+.area-left .section-subtitle {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 280px;
+}
+
+.area-divider {
+  width: 1px;
+  height: 80px;
+  background: var(--border-light);
+  flex-shrink: 0;
+}
+
+.area-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  flex: 1;
+}
+.area-list-item {
+  font-family: var(--font-primary);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 8px 16px;
+  background: var(--warm-white);
+  border: 1px solid var(--border-light);
+  border-radius: 100px;
+  transition: var(--transition);
+  cursor: default;
+}
+.area-list-item:hover {
+  background: var(--copper);
+  color: #fff;
+  border-color: var(--copper);
+}
+
+/* ============ CONTACT (compact) ============ */
+.contact-compact {
+  padding: 48px 0;
+  background: var(--warm-white);
+  border-bottom: 1px solid var(--border-light);
+  position: relative;
+}
+.contact-compact::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, var(--warm-white));
+  pointer-events: none;
+  z-index: 10;
+}
+.contact-compact-inner {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+.contact-compact-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.contact-compact-item .contact-card-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--charcoal);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.contact-compact-item .contact-card-icon svg { width: 20px; height: 20px; color: var(--copper); }
+.contact-compact-item h3 {
+  font-family: var(--font-primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 2px;
+}
+.contact-compact-item p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+.contact-compact-item a {
+  color: var(--copper);
+  text-decoration: none;
+  font-weight: 500;
+}
+.contact-compact-item a:hover { text-decoration: underline; }
+.contact-compact-sub {
+  font-size: 0.75rem !important;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* ============ FOOTER ============ */
+.footer {
+  background: var(--charcoal);
+  padding: 80px 0 0;
+}
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 140px;
+  background: linear-gradient(to bottom, var(--warm-white), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-brand .nav-logo { margin-bottom: 16px; }
+.footer-logo img {
+  height: 56px !important;
+  filter: brightness(0) saturate(100%) invert(72%) sepia(30%) saturate(500%) hue-rotate(5deg) brightness(92%) !important;
+}
+.footer-brand p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.7;
+  max-width: 280px;
+  margin-bottom: 24px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+}
+.footer-social a {
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+  transition: var(--transition);
+  font-size: 0.85rem;
+}
+.footer-social a:hover {
+  background: var(--copper);
+  color: #fff;
+}
+
+.footer-col h4 {
+  font-family: var(--font-primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+}
+
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul a {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.footer-col ul a:hover { color: var(--copper); }
+
+.footer-bottom {
+  padding: 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-bottom p {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.25);
+}
+.footer-bottom-links {
+  display: flex;
+  gap: 24px;
+}
+.footer-bottom-links a {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.25);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.footer-bottom-links a:hover { color: rgba(255,255,255,0.5); }
+
+/* ============ LIGHTBOX ============ */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  z-index: 2000;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+  backdrop-filter: blur(12px);
+}
+.lightbox.active { display: flex; }
+.lightbox-img-wrap {
+  position: relative;
+  max-width: 90vw;
+  max-height: 78vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox img {
+  max-width: 90vw;
+  max-height: 78vh;
+  object-fit: contain;
+  border-radius: var(--radius);
+  cursor: default;
+}
+.lightbox-info {
+  margin-top: 20px;
+  text-align: center;
+  max-width: 600px;
+}
+.lightbox-counter {
+  font-family: var(--font-primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--copper);
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+.lightbox-caption {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.5;
+}
+.lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  z-index: 10;
+}
+.lightbox-close:hover { background: rgba(255,255,255,0.2); }
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+.lightbox-nav:hover { background: var(--copper); border-color: var(--copper); }
+.lightbox-prev { left: 24px; }
+.lightbox-next { right: 24px; }
+
+/* ============ STICKY CTA (mobile) ============ */
+.sticky-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 900;
+  background: var(--charcoal);
+  padding: 12px 24px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+.sticky-cta.visible { transform: translateY(0); }
+.sticky-cta .btn { width: 100%; justify-content: center; }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 1024px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 220px; }
+  .gallery-item.span-row { grid-row: span 1; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .quote-grid { grid-template-columns: 1fr; gap: 48px; }
+  .area-inner { flex-direction: column; text-align: center; }
+  .area-left .section-subtitle { max-width: 100%; }
+  .area-divider { width: 60px; height: 1px; }
+  .area-list { justify-content: center; }
+  .reviews-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .reviews-grid { grid-template-columns: 1fr; }
+  .reviews { padding: 40px 0; }
+  .reviews-header { flex-direction: column; gap: 12px; }
+  .nav-links, .nav-cta { display: none; }
+  .nav-mobile-toggle { display: flex; }
+
+  .hero h1 { font-size: 1.8rem; }
+  .hero-stats { gap: 24px; flex-wrap: wrap; }
+  .hero-stats .hero-stat { flex: 1; min-width: 100px; }
+
+  .trust-grid { gap: 0; justify-content: center; }
+  .trust-item { width: 50%; box-sizing: border-box; padding: 12px 8px; }
+  .trust-item::after { display: none; }
+  .trust-number { font-size: 1.2rem; }
+  .trust-label { font-size: 0.75rem; }
+  .trust-google-icon { width: 24px; height: 24px; }
+  .trust-stars { font-size: 0.85rem; letter-spacing: 1px; }
+
+  .about-grid { grid-template-columns: 1fr; gap: 48px; }
+  .about-img-inset { display: none; }
+  .about-badge { width: 100px; height: 100px; }
+  .about-badge-number { font-size: 1.6rem; }
+
+  .services-grid { grid-template-columns: 1fr; }
+  .service-card { height: 320px; }
+  .service-card p { max-height: 100px; }
+  .service-card-link { opacity: 1; transform: none; }
+
+  .why-grid { grid-template-columns: 1fr; }
+
+  .gallery-header { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 200px; }
+  .gallery-item.span-2 { grid-column: span 1; }
+  .gallery-filter { flex-wrap: wrap; }
+  .contact-compact-inner { gap: 32px; }
+
+  .ba-grid { grid-template-columns: 1fr; }
+  .ba-slider { height: 320px; }
+
+  .process-timeline { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+
+  .contact-grid { grid-template-columns: 1fr; }
+
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+
+  .sticky-cta { display: block; }
+  .footer { padding-bottom: 72px; }
+
+  .section-title { font-size: 1.8rem; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 1.4rem; }
+  .hero-btns { flex-direction: column; }
+  .hero-btns .btn { width: 100%; justify-content: center; }
+  .trust-item { width: 50%; padding: 10px 6px; }
+  .trust-number { font-size: 1.1rem; }
+  .trust-google-icon { width: 20px; height: 20px; }
+  .about-points { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 260px; }
+  .contact-compact-inner { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .process-timeline { grid-template-columns: 1fr; }
+  .area-list-item { font-size: 0.72rem; padding: 5px 12px; }
+  .form-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="xfence-logo-dark-trimmed.png" alt="X-Fence">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Our Work</a></li>
+      <li><a href="#why">Why X-Fence</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#quote" class="btn btn-primary">Get a Free Quote</a>
+    </div>
+    <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="nav-mobile-menu" id="mobileMenu" style="display:flex;">
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#gallery" onclick="closeMobile()">Our Work</a>
+  <a href="#why" onclick="closeMobile()">Why X-Fence</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+  <a href="#quote" class="btn btn-primary" onclick="closeMobile()">Get a Free Quote</a>
+  <div class="nav-mobile-menu-social">
+    <a href="https://www.facebook.com/xgardenservices?locale=en_GB" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+    <a href="https://www.instagram.com/_xgarden/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    <a href="https://wa.me/447392515023" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <img src="hero-closeboard.jpeg" alt="Professional closeboard fencing installation by X-Fence" loading="eager">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-label">Professional Fencing Solutions</div>
+    <img src="xfence-logo-white-trimmed.png" alt="X-Fence Logo" class="hero-logo">
+    <h1>Boundaries. Built <span>Better.</span></h1>
+    <p class="hero-desc">Fencing installation, replacement and repair done right. Strong foundations, quality materials and proper craftsmanship &mdash; built to outlast everything except your expectations.</p>
+    <div class="hero-btns">
+      <a href="#quote" class="btn btn-primary btn-arrow">Get a Free Quote</a>
+      <a href="#gallery" class="btn btn-light btn-arrow">View Our Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUST BAR ===== -->
+<section class="trust-bar">
+  <div class="container-wide">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-number" data-count="7">0+</div>
+        <div class="trust-label">Years Experience</div>
+      </div>
+      <div class="trust-item trust-google">
+        <svg class="trust-google-icon" width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        <div class="trust-number">5.0 <span class="trust-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+        <div class="trust-label">Rated on Google</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-number" data-count="250">0+</div>
+        <div class="trust-label">Projects Completed</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-number">100%</div>
+        <div class="trust-label">Satisfaction Guaranteed</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT + SERVICES ===== -->
+<div class="about-services-wrap">
+  <canvas class="silk-bg" id="silk-about-services"></canvas>
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-images reveal">
+        <div class="about-img-main">
+          <img src="WhatsApp Image 2026-08-21 at 14.40.03.jpeg" alt="X-Fence professional installing fence posts" loading="lazy">
+        </div>
+        <div class="about-img-inset">
+          <img src="WhatsApp Image 2026-08-21 at 14.33.31 (2).jpeg" alt="Close-up of contemporary slatted fencing" loading="lazy">
+        </div>
+        <div class="about-badge">
+          <div class="about-badge-number">7+</div>
+          <div class="about-badge-text">Years</div>
+        </div>
+      </div>
+      <div class="about-content reveal">
+        <div class="section-label">About X-Fence</div>
+        <h2 class="section-title">Built on Foundations<br>That Don't Move</h2>
+        <p class="about-text">X-Fence has been putting up fences for over seven years &mdash; homes, businesses, you name it. Whether it's a solid closeboard boundary or a sleek slatted design, we build fences that look great and actually last.</p>
+        <p class="about-text">Every job starts with a proper look at your site, accurate measurements and an honest chat about what you need. We only use the good stuff &mdash; treated timber, concrete posts and heavy-duty gravel boards &mdash; because a fence is only as strong as what's holding it up. Think of us as the people who take your boundary personally.</p>
+        <div class="about-points">
+          <div class="about-point">
+            <div class="about-point-icon">
+              <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            Fully Insured
+          </div>
+          <div class="about-point">
+            <div class="about-point-icon">
+              <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            Free Quotations
+          </div>
+          <div class="about-point">
+            <div class="about-point-icon">
+              <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            Quality Materials
+          </div>
+          <div class="about-point">
+            <div class="about-point-icon">
+              <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            Waste Removed
+          </div>
+        </div>
+        <a href="#quote" class="btn btn-primary btn-arrow">Request a Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services" id="services">
+  <div class="container-wide">
+    <div class="services-header reveal">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Our <span>Services</span></h2>
+      <p class="section-subtitle">Fencing, patios, decking &mdash; every job gets the same high standard of work, no matter the size.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-card-img">
+          <img src="WhatsApp Image 2026-08-27 at 14.20.36.jpeg" alt="Closeboard fencing with concrete posts in golden light" loading="lazy">
+        </div>
+        <div class="service-card-overlay"></div>
+        <div class="service-card-content">
+          <div class="service-card-number">01</div>
+          <h3>Closeboard Fencing</h3>
+          <p>The UK's favourite fence for a reason. Vertical boards, concrete posts, gravel boards &mdash; built to last and look the part. Clean, solid, private. The fence that does the job without the fuss.</p>
+          <a href="#quote" class="service-card-link">Get a Quote &#8594;</a>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-card-img">
+          <img src="WhatsApp Image 2026-08-27 at 14.15.28.jpeg" alt="Long run of contemporary slatted fencing" loading="lazy">
+        </div>
+        <div class="service-card-overlay"></div>
+        <div class="service-card-content">
+          <div class="service-card-number">02</div>
+          <h3>Slatted Fencing</h3>
+          <p>Horizontal slats, clean lines and a modern finish that turns your garden boundary into an actual feature. Contemporary fencing for the kind of garden you'd actually want to sit in.</p>
+          <a href="#quote" class="service-card-link">Get a Quote &#8594;</a>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-card-img">
+          <img src="WhatsApp Image 2026-08-21 at 14.40.02 (1).jpeg" alt="Freshly installed closeboard fence along side passage" loading="lazy">
+        </div>
+        <div class="service-card-overlay"></div>
+        <div class="service-card-content">
+          <div class="service-card-number">03</div>
+          <h3>Fence Replacement</h3>
+          <p>Out with the old, in with something that actually works. We rip out tired, beaten-up fencing and replace it with something solid. All waste taken away &mdash; we leave your garden cleaner than we found it.</p>
+          <a href="#quote" class="service-card-link">Get a Quote &#8594;</a>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-card-img">
+          <img src="WhatsApp Image 2026-08-27 at 14.06.24.jpeg" alt="Neatly repaired closeboard fence by garden office" loading="lazy">
+        </div>
+        <div class="service-card-overlay"></div>
+        <div class="service-card-content">
+          <div class="service-card-number">04</div>
+          <h3>Repairs & Maintenance</h3>
+          <p>Storm damage, rotten panels, posts leaning like they've had a few? We fix it up &mdash; because sometimes the best fence is the one you've already got, just done right this time.</p>
+          <a href="#quote" class="service-card-link">Get a Quote &#8594;</a>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-card-img">
+          <img src="WhatsApp Image 2026-08-27 at 14.16.49.jpeg" alt="Grey slate patio with timber planters and ornamental grasses" loading="lazy">
+        </div>
+        <div class="service-card-overlay"></div>
+        <div class="service-card-content">
+          <div class="service-card-number">05</div>
+          <h3>Patios</h3>
+          <p>From Indian sandstone to porcelain slabs &mdash; we lay patios that actually drain properly and still look cracking years down the line. Level, pointed and built on a proper sub-base. No wobbly slabs here.</p>
+          <a href="#quote" class="service-card-link">Get a Quote &#8594;</a>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-card-img">
+          <img src="WhatsApp Image 2026-08-27 at 14.10.00.jpeg" alt="Luxury composite decking under timber pergola with dining area" loading="lazy">
+        </div>
+        <div class="service-card-overlay"></div>
+        <div class="service-card-content">
+          <div class="service-card-number">06</div>
+          <h3>Decking</h3>
+          <p>Composite or timber, raised or ground-level &mdash; we build decking that's solid underfoot and designed to handle the great British weather. The garden upgrade that actually gets used.</p>
+          <a href="#quote" class="service-card-link">Get a Quote &#8594;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ===== WHY X-FENCE ===== -->
+<section class="why" id="why">
+  <div class="why-bg">
+    <img src="why-bg.jpeg" alt="" loading="lazy">
+  </div>
+  <div class="container">
+    <div class="why-header reveal">
+      <div class="section-label">The X-Fence Difference</div>
+      <h2 class="section-title">Why Choose X-Fence?</h2>
+      <p class="section-subtitle">We don't cut corners &mdash; we reinforce them. Every post is straight, every panel is level, and every customer gets exactly what they were promised.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-card-number">01</div>
+        <h3>Premium-Grade Materials</h3>
+        <p>Treated timber, concrete posts and heavy-duty gravel boards as standard. We'd rather over-build than under-deliver &mdash; "flimsy" isn't in our vocabulary.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-card-number">02</div>
+        <h3>Precision Craftsmanship</h3>
+        <p>Solid foundations, spot-on measurements and real attention to detail. If a fence line isn't dead straight, we're not signing it off. Simple as that.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-card-number">03</div>
+        <h3>Dependable & Punctual</h3>
+        <p>We arrive when we say we will &mdash; a radical concept in the trades, apparently. Clear communication from initial enquiry to final handshake. No ghosting, no excuses.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-card-number">04</div>
+        <h3>Engineered for British Weather</h3>
+        <p>Wind, rain, frost, the occasional biblical downpour &mdash; our installations are built to stand firm through whatever this island throws at them, season after season.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-card-number">05</div>
+        <h3>Turnkey Service</h3>
+        <p>We handle everything: taking out the old fence, putting in the new one, and clearing up all the mess. You get a clean finish &mdash; not a garden that looks like a building site.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-card-number">06</div>
+        <h3>Transparent Pricing</h3>
+        <p>We look at the job, give you a price, and stick to it. No hidden charges, no pressure, no sneaky extras on the bill. The price we agree is the price you pay.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section class="gallery" id="gallery">
+  <div class="container-wide">
+    <div class="gallery-header reveal">
+      <div>
+        <div class="section-label">Portfolio</div>
+        <h2 class="section-title">Our <span>Work</span></h2>
+        <p class="section-subtitle">No stock photos, no borrowed pictures. Every image here is a real X-Fence job &mdash; fencing, patios and decking. Tap any photo to see it up close.</p>
+      </div>
+      <div class="gallery-filter">
+        <button class="gallery-filter-btn active" data-filter="all">All</button>
+        <button class="gallery-filter-btn" data-filter="fences">Fences</button>
+        <button class="gallery-filter-btn" data-filter="patios">Patios</button>
+        <button class="gallery-filter-btn" data-filter="decking">Decking</button>
+      </div>
+    </div>
+    <div class="gallery-grid">
+      <!-- FENCES -->
+      <div class="gallery-item reveal" data-category="fences">
+        <img src="WhatsApp Image 2026-08-27 at 14.20.36.jpeg" alt="Closeboard fencing with concrete posts" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Fences</span><div class="gallery-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      </div>
+      <div class="gallery-item reveal" data-category="fences">
+        <img src="WhatsApp Image 2026-08-27 at 14.11.24 (5).jpeg" alt="Slatted fencing across large garden" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Fences</span><div class="gallery-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      </div>
+      <div class="gallery-item reveal" data-category="fences">
+        <img src="WhatsApp Image 2026-08-27 at 14.06.23 (6).jpeg" alt="Closeboard fence with patio dining area" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Fences</span><div class="gallery-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      </div>
+      <div class="gallery-item reveal" data-category="fences">
+        <img src="WhatsApp Image 2026-08-27 at 14.11.24 (4).jpeg" alt="Slatted fencing with rattan furniture" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Fences</span><div class="gallery-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      </div>
+      <div class="gallery-item reveal" data-category="fences">
+        <img src="WhatsApp Image 2026-08-27 at 14.06.23 (1).jpeg" alt="Closeboard fence behind patio" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Fences</span><div class="gallery-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      </div>
+      <div class="gallery-item reveal" data-category="fences">
+        <img src="WhatsApp Image 2026-08-27 at 14.11.04.jpeg" alt="Picket fencing along woodland slope" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Fences</span><div class="gallery-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      </div>
+      <div class="gallery-item reveal" data-category="fences">
+        <img src="WhatsApp Image 2026-08-21 at 14.40.02 (1).jpeg" alt="Dark stained closeboard fence" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Fences</span><div class="gallery-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      </div>
+      <div class="gallery-item reveal" data-category="fences">
+        <img src="WhatsApp Image 2026-08-27 at 14.07.28.jpeg" alt="Closeboard fence with stone gravel boards" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Fences</span><div class="gallery-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      </div>
+      <div class="gallery-item reveal" data-category="fences">
+        <img src="WhatsApp Image 2026-08-21 at 14.40.03 (3).jpeg" alt="Dark stained closeboard with garden" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Fences</span><div class="gallery-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      </div>
+      <!-- PATIOS -->
+      <div class="gallery-item reveal" data-category="patios">
+        <img src="patios/WhatsApp Image 2026-08-27 at 14.17.19 (6).jpeg" alt="Professional patio installation" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Patios</span><div class="gallery-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      </div>
+      <div class="gallery-item reveal" data-category="patios">
+        <img src="patios/WhatsApp Image 2026-08-27 at 14.20.35 (1).jpeg" alt="Patio with garden landscaping" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Patios</span><div class="gallery-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      </div>
+      <div class="gallery-item reveal" data-category="patios">
+        <img src="patios/WhatsApp Image 2026-08-27 at 14.20.35 (2).jpeg" alt="Stone patio area" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Patios</span><div class="gallery-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      </div>
+      <div class="gallery-item reveal" data-category="patios">
+        <img src="patios/WhatsApp Image 2026-08-27 at 14.20.35 (3).jpeg" alt="Patio with outdoor seating" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Patios</span><div class="gallery-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      </div>
+      <div class="gallery-item reveal" data-category="patios">
+        <img src="patios/WhatsApp Image 2026-08-27 at 14.20.35 (4).jpeg" alt="Patio with planters" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Patios</span><div class="gallery-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      </div>
+      <div class="gallery-item reveal" data-category="patios">
+        <img src="patios/WhatsApp Image 2026-08-27 at 14.20.35 (6).jpeg" alt="Grey patio with garden" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Patios</span><div class="gallery-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      </div>
+      <div class="gallery-item reveal" data-category="patios">
+        <img src="patios/WhatsApp Image 2026-08-27 at 14.20.35 (7).jpeg" alt="Patio with mature planting" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Patios</span><div class="gallery-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      </div>
+      <div class="gallery-item reveal" data-category="patios">
+        <img src="patios/WhatsApp Image 2026-08-27 at 14.20.35 (8).jpeg" alt="Large patio installation" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Patios</span><div class="gallery-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      </div>
+      <div class="gallery-item reveal" data-category="patios">
+        <img src="patios/WhatsApp Image 2026-08-27 at 14.21.10 (1).jpeg" alt="Patio with garden building" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Patios</span><div class="gallery-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      </div>
+      <div class="gallery-item reveal" data-category="patios">
+        <img src="patios/WhatsApp Image 2026-08-27 at 14.21.10 (2).jpeg" alt="Patio with landscaped garden" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Patios</span><div class="gallery-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      </div>
+      <div class="gallery-item reveal" data-category="patios">
+        <img src="patios/WhatsApp Image 2026-08-27 at 14.21.10 (3).jpeg" alt="Patio and outdoor living space" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Patios</span><div class="gallery-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      </div>
+      <div class="gallery-item reveal" data-category="patios">
+        <img src="patios/WhatsApp Image 2026-08-27 at 14.21.10 (4).jpeg" alt="Patio with planting borders" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Patios</span><div class="gallery-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      </div>
+      <div class="gallery-item reveal" data-category="patios">
+        <img src="patios/WhatsApp Image 2026-08-27 at 14.21.10.jpeg" alt="Completed patio project" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Patios</span><div class="gallery-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      </div>
+      <!-- DECKING -->
+      <div class="gallery-item reveal" data-category="decking">
+        <img src="decks/WhatsApp Image 2026-08-27 at 14.10.00.jpeg" alt="Composite decking with pergola" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Decking</span><div class="gallery-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      </div>
+      <div class="gallery-item reveal" data-category="decking">
+        <img src="decks/WhatsApp Image 2026-08-27 at 14.10.01.jpeg" alt="Timber decking installation" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Decking</span><div class="gallery-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      </div>
+      <div class="gallery-item reveal" data-category="decking">
+        <img src="decks/WhatsApp Image 2026-08-27 at 14.10.01 (2).jpeg" alt="Decking with outdoor dining" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Decking</span><div class="gallery-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      </div>
+      <div class="gallery-item reveal" data-category="decking">
+        <img src="decks/WhatsApp Image 2026-08-27 at 14.10.01 (3).jpeg" alt="Garden decking area" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Decking</span><div class="gallery-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      </div>
+      <div class="gallery-item reveal" data-category="decking">
+        <img src="decks/WhatsApp Image 2026-08-27 at 14.10.01 (5).jpeg" alt="Raised decking with steps" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Decking</span><div class="gallery-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      </div>
+      <div class="gallery-item reveal" data-category="decking">
+        <img src="decks/WhatsApp Image 2026-08-27 at 14.16.46.jpeg" alt="Decking with garden view" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Decking</span><div class="gallery-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      </div>
+      <div class="gallery-item reveal" data-category="decking">
+        <img src="decks/WhatsApp Image 2026-08-27 at 14.16.49.jpeg" alt="Decking with landscaping" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Decking</span><div class="gallery-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      </div>
+      <div class="gallery-item reveal" data-category="decking">
+        <img src="decks/WhatsApp Image 2026-08-27 at 14.18.31.jpeg" alt="Completed decking project" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-label">Decking</span><div class="gallery-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      </div>
+    </div>
+    <div class="gallery-view-all-wrap">
+      <button class="gallery-view-all" id="galleryViewAll">View All</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <div class="reviews-header reveal">
+      <div class="reviews-badge">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        <div class="reviews-badge-stars">
+          <span class="reviews-badge-score">5.0</span>
+          <span class="reviews-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        </div>
+        <span class="reviews-badge-text">Google Reviews</span>
+      </div>
+      <a href="https://www.google.com/maps/search/X+Garden+Services" class="reviews-google-link" target="_blank" rel="noopener">See all reviews &#8594;</a>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-card-top">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <span class="review-tag">Closeboard</span>
+        </div>
+        <p class="review-text">&ldquo;Absolutely brilliant job from start to finish. Turned up on time, cracked on with the work and left the garden spotless. The fence looks incredible &mdash; proper solid build and the finish is really smart. Would recommend X-Fence to anyone.&rdquo;</p>
+        <div class="review-author">
+          <div class="review-avatar">JH</div>
+          <div>
+            <div class="review-author-info">
+              <span class="review-name">James H.</span>
+              <span class="review-date">3 months ago</span>
+            </div>
+            <div class="review-verified"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="rgba(255,255,255,0.35)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Verified review</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-card-top">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <span class="review-tag">Full Re-fence</span>
+        </div>
+        <p class="review-text">&ldquo;Had our whole garden re-fenced with closeboard panels. The quality of the materials and the attention to detail was second to none. Really fair price for what we got. Already recommended them to three of our neighbours.&rdquo;</p>
+        <div class="review-author">
+          <div class="review-avatar">SP</div>
+          <div>
+            <div class="review-author-info">
+              <span class="review-name">Sarah P.</span>
+              <span class="review-date">5 months ago</span>
+            </div>
+            <div class="review-verified"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="rgba(255,255,255,0.35)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Verified review</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-card-top">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <span class="review-tag">Fence + Patio</span>
+        </div>
+        <p class="review-text">&ldquo;Top-notch service. Replaced our old slatted fence and laid a new patio in the same week. Communication was great throughout and the finished result is exactly what we wanted. Five stars, easy.&rdquo;</p>
+        <div class="review-author">
+          <div class="review-avatar">MT</div>
+          <div>
+            <div class="review-author-info">
+              <span class="review-name">Mark T.</span>
+              <span class="review-date">1 month ago</span>
+            </div>
+            <div class="review-verified"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="rgba(255,255,255,0.35)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Verified review</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section class="process" id="process">
+  <div class="process-bg">
+    <img src="WhatsApp Image 2026-08-27 at 14.07.28.jpeg" alt="" loading="lazy">
+  </div>
+  <div class="container">
+    <div class="process-header reveal">
+      <div class="section-label">How It Works</div>
+      <h2 class="section-title">Simple Process, Solid Results</h2>
+      <p class="section-subtitle">From first call to finished fence in four easy steps. No fuss, no confusion.</p>
+    </div>
+    <div class="process-timeline reveal">
+      <div class="process-step">
+        <div class="process-step-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <div class="process-step-number">01</div>
+        <h3>Get In Touch</h3>
+        <p>Give us a call, drop an email or fill in our form. We'll get back to you within 24 hours &mdash; yes, actually within 24 hours.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <div class="process-step-number">02</div>
+        <h3>We Come & Look</h3>
+        <p>We pop round, check the site, take measurements and figure out what needs doing. This is the bit that separates a proper job from a bodge job.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <div class="process-step-number">03</div>
+        <h3>Clear Quote</h3>
+        <p>You get a straightforward price with everything listed out. What you see is what you pay &mdash; no surprises on the bill.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="process-step-number">04</div>
+        <h3>Job Done</h3>
+        <p>Our team gets to work. Old fence out, new fence in, site left spotless. Job done, handshake given.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT (compact) ===== -->
+<section class="contact-compact" id="contact">
+  <div class="container">
+    <div class="contact-compact-inner reveal">
+      <div class="contact-compact-item">
+        <div class="contact-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <div>
+          <h3>Call Us</h3>
+          <p><a href="tel:+447392515023">07392 515023</a></p>
+          <p class="contact-compact-sub">Mon-Fri: 7am - 6pm &middot; Sat: 8am - 2pm</p>
+        </div>
+      </div>
+      <div class="contact-compact-item">
+        <div class="contact-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <h3>Email Us</h3>
+          <p><a href="mailto:info.xfence@gmail.com">info.xfence@gmail.com</a></p>
+          <p class="contact-compact-sub">We respond within 24 hours</p>
+        </div>
+      </div>
+      <div class="contact-compact-item">
+        <div class="contact-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <h3>Service Area</h3>
+          <p>High Wycombe to Coventry</p>
+          <p class="contact-compact-sub">Covering all surrounding areas</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== QUOTE SECTION ===== -->
+<section class="quote-section" id="quote">
+  <img src="xfence-logo-white-trimmed.png" alt="" class="quote-watermark" aria-hidden="true">
+  <div class="container">
+    <div class="quote-grid">
+      <div class="quote-content reveal">
+        <div class="section-label">Get Started</div>
+        <h2 class="section-title">Ready for a<br>Better Boundary?</h2>
+        <p class="section-subtitle">Fill in the form below and we'll set up a free site visit. No obligation, no pressure &mdash; just honest advice from people who know fences.</p>
+        <ul class="quote-features">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Free quote, no strings attached
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            We reply within 24 hours
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Site visit when it suits you
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Clear pricing with no hidden extras
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            All waste removed and disposed of
+          </li>
+        </ul>
+      </div>
+      <div class="quote-form reveal">
+        <div class="quote-form-title">Request Your Free Quote</div>
+        <form id="quoteForm" onsubmit="return false;">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" placeholder="Your phone number" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="Your email">
+            </div>
+            <div class="form-group">
+              <label for="postcode">Postcode *</label>
+              <input type="text" id="postcode" placeholder="e.g. GU1 1AA" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="service">Service Required</label>
+              <select id="service">
+                <option value="">Select a service</option>
+                <option>Fencing Installation</option>
+                <option>Fence Replacement</option>
+                <option>Garden Fencing</option>
+                <option>Security Fencing</option>
+                <option>Gates</option>
+                <option>Repairs & Maintenance</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="length">Approximate Fence Length</label>
+              <input type="text" id="length" placeholder="e.g. 20 metres">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contact-pref">Preferred Contact Method</label>
+              <select id="contact-pref">
+                <option value="">No preference</option>
+                <option>Phone</option>
+                <option>Email</option>
+                <option>WhatsApp</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="photo">Photo Upload</label>
+              <input type="file" id="photo" accept="image/*" style="padding: 10px;">
+            </div>
+          </div>
+          <div class="form-row full">
+            <div class="form-group">
+              <label for="message">Additional Information</label>
+              <textarea id="message" placeholder="Tell us about your project, access, any specific requirements..."></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-arrow">Send Quote Request</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICE AREA ===== -->
+<section class="area" id="area">
+  <div class="container">
+    <div class="area-inner reveal">
+      <div class="area-left">
+        <div class="section-label">Coverage</div>
+        <h2 class="section-title">Areas We Serve</h2>
+        <p class="section-subtitle">High Wycombe to Coventry and everything in between.</p>
+      </div>
+      <div class="area-divider"></div>
+      <div class="area-list">
+        <div class="area-list-item">High Wycombe</div>
+        <div class="area-list-item">Coventry</div>
+        <div class="area-list-item">Beaconsfield</div>
+        <div class="area-list-item">Marlow</div>
+        <div class="area-list-item">Amersham</div>
+        <div class="area-list-item">Chesham</div>
+        <div class="area-list-item">Princes Risborough</div>
+        <div class="area-list-item">Aylesbury</div>
+        <div class="area-list-item">Oxford</div>
+        <div class="area-list-item">Banbury</div>
+        <div class="area-list-item">Leamington Spa</div>
+        <div class="area-list-item">Warwick</div>
+        <div class="area-list-item">Kenilworth</div>
+        <div class="area-list-item">Stratford-upon-Avon</div>
+        <div class="area-list-item">Solihull</div>
+        <div class="area-list-item">Rugby</div>
+        <div class="area-list-item">Bicester</div>
+        <div class="area-list-item">Henley-on-Thames</div>
+        <div class="area-list-item">Maidenhead</div>
+        <div class="area-list-item">+ Surrounding Areas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo footer-logo">
+          <img src="xfence-logo-white-trimmed.png" alt="X-Fence">
+        </a>
+        <p>Fencing installation, replacement and repair. Seven years of doing it right, zero shortcuts &mdash; fences built to last.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/xgardenservices?locale=en_GB" target="_blank" rel="noopener" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="https://www.instagram.com/_xgarden/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          <a href="https://wa.me/447392515023" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Our Work</a></li>
+          <li><a href="#why">Why X-Fence</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Fencing Installation</a></li>
+          <li><a href="#services">Fence Replacement</a></li>
+          <li><a href="#services">Garden Fencing</a></li>
+          <li><a href="#services">Security Fencing</a></li>
+          <li><a href="#services">Gates</a></li>
+          <li><a href="#services">Repairs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+447392515023">07392 515023</a></li>
+          <li><a href="mailto:info.xfence@gmail.com">info.xfence@gmail.com</a></li>
+          <li><a href="#area">High Wycombe to Coventry</a></li>
+          <li><a href="#quote">Get a Quote</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 X-Fence. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== STICKY MOBILE CTA ===== -->
+<div class="sticky-cta">
+  <a href="#quote" class="btn btn-primary btn-arrow">Get a Free Quote</a>
+</div>
+
+<!-- ===== LIGHTBOX ===== -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+  <button class="lightbox-nav lightbox-prev" aria-label="Previous">&#8592;</button>
+  <button class="lightbox-nav lightbox-next" aria-label="Next">&#8594;</button>
+  <div class="lightbox-img-wrap">
+    <img src="" alt="Gallery image">
+  </div>
+  <div class="lightbox-info">
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+</div>
+
+<script>
+// Always scroll to top on page load/refresh
+history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
+
+// Navigation scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 80);
+});
+
+// Mobile menu
+const mobileToggle = document.getElementById('mobileToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+mobileToggle.addEventListener('click', () => {
+  mobileToggle.classList.toggle('active');
+  mobileMenu.classList.toggle('active');
+  document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+});
+function closeMobile() {
+  mobileToggle.classList.remove('active');
+  mobileMenu.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Scroll reveal
+const revealElements = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, index * 80);
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+revealElements.forEach(el => revealObserver.observe(el));
+
+// Counter animation
+function animateCounters() {
+  document.querySelectorAll('[data-count]').forEach(el => {
+    const target = parseInt(el.dataset.count);
+    const suffix = el.textContent.includes('+') ? '+' : '';
+    let current = 0;
+    const increment = target / 60;
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        el.textContent = target + suffix;
+        clearInterval(timer);
+      } else {
+        el.textContent = Math.floor(current) + suffix;
+      }
+    }, 25);
+  });
+}
+
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateCounters();
+      counterObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+const trustBar = document.querySelector('.trust-bar');
+if (trustBar) counterObserver.observe(trustBar);
+
+// Gallery filter
+// Gallery filter + View All
+const galleryGrid = document.querySelector('.gallery-grid');
+const viewAllBtn = document.getElementById('galleryViewAll');
+let galleryExpanded = false;
+let activeFilter = 'all';
+
+function truncateGallery() {
+  if (galleryExpanded) {
+    viewAllBtn.closest('.gallery-view-all-wrap').style.display = 'none';
+    return;
+  }
+  const isMobile = window.innerWidth <= 768;
+  const limit = isMobile ? 3 : 12;
+  const shouldTruncate = isMobile || activeFilter === 'all';
+  const items = document.querySelectorAll('.gallery-item');
+  let visibleCount = 0;
+  items.forEach(item => {
+    item.classList.remove('gallery-truncated');
+    if (item.style.display === 'none') return;
+    visibleCount++;
+    if (shouldTruncate && visibleCount > limit) item.classList.add('gallery-truncated');
+  });
+  if (shouldTruncate && visibleCount > limit) {
+    viewAllBtn.closest('.gallery-view-all-wrap').style.display = '';
+  } else {
+    viewAllBtn.closest('.gallery-view-all-wrap').style.display = 'none';
+  }
+}
+
+document.querySelectorAll('.gallery-filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.gallery-filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    galleryExpanded = false;
+    activeFilter = btn.dataset.filter;
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.classList.remove('gallery-truncated');
+      if (activeFilter === 'all' || item.dataset.category === activeFilter) {
+        item.style.display = '';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+    truncateGallery();
+  });
+});
+
+viewAllBtn.addEventListener('click', () => {
+  galleryExpanded = true;
+  document.querySelectorAll('.gallery-item.gallery-truncated').forEach(item => {
+    item.classList.remove('gallery-truncated');
+  });
+  viewAllBtn.closest('.gallery-view-all-wrap').style.display = 'none';
+});
+
+truncateGallery();
+
+window.addEventListener('resize', () => {
+  galleryExpanded = false;
+  truncateGallery();
+});
+
+// Sticky CTA: show on scroll up, hide on scroll down (mobile only)
+const stickyCta = document.querySelector('.sticky-cta');
+let lastScrollY = window.scrollY;
+window.addEventListener('scroll', () => {
+  if (window.innerWidth > 768) return;
+  const currentY = window.scrollY;
+  if (currentY < lastScrollY && currentY > 200) {
+    stickyCta.classList.add('visible');
+  } else {
+    stickyCta.classList.remove('visible');
+  }
+  lastScrollY = currentY;
+}, { passive: true });
+
+// Lightbox
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+const lightboxCounter = document.getElementById('lightboxCounter');
+const lightboxCaption = document.getElementById('lightboxCaption');
+let galleryImages = [];
+let currentImageIndex = 0;
+
+function updateLightboxInfo() {
+  lightboxCounter.textContent = (currentImageIndex + 1) + ' / ' + galleryImages.length;
+  const alt = galleryImages[currentImageIndex].alt || '';
+  lightboxCaption.textContent = alt.replace('X-Fence ', '').replace(' by X-Fence', '');
+}
+
+document.querySelectorAll('.gallery-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const img = item.querySelector('img');
+    galleryImages = Array.from(document.querySelectorAll('.gallery-item:not([style*="display: none"]) img'));
+    currentImageIndex = galleryImages.indexOf(img);
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    updateLightboxInfo();
+  });
+});
+
+lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e) => { if (e.target === lightbox || e.target.classList.contains('lightbox-img-wrap')) closeLightbox(); });
+document.addEventListener('keydown', (e) => {
+  if (!lightbox.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') navLightbox(-1);
+  if (e.key === 'ArrowRight') navLightbox(1);
+});
+
+lightbox.querySelector('.lightbox-prev').addEventListener('click', (e) => { e.stopPropagation(); navLightbox(-1); });
+lightbox.querySelector('.lightbox-next').addEventListener('click', (e) => { e.stopPropagation(); navLightbox(1); });
+
+function closeLightbox() {
+  lightbox.classList.remove('active');
+  document.body.style.overflow = '';
+}
+function navLightbox(dir) {
+  currentImageIndex = (currentImageIndex + dir + galleryImages.length) % galleryImages.length;
+  lightboxImg.src = galleryImages[currentImageIndex].src;
+  lightboxImg.alt = galleryImages[currentImageIndex].alt;
+  updateLightboxInfo();
+}
+
+// Before/After slider
+document.querySelectorAll('.ba-slider').forEach(slider => {
+  const handle = slider.querySelector('.ba-handle');
+  const afterImg = slider.querySelector('.ba-img-after');
+  let isDragging = false;
+
+  function updatePosition(x) {
+    const rect = slider.getBoundingClientRect();
+    let pos = (x - rect.left) / rect.width;
+    pos = Math.max(0.05, Math.min(0.95, pos));
+    handle.style.left = (pos * 100) + '%';
+    afterImg.style.clipPath = 'inset(0 0 0 ' + (pos * 100) + '%)';
+  }
+
+  slider.addEventListener('mousedown', (e) => { isDragging = true; updatePosition(e.clientX); });
+  slider.addEventListener('touchstart', (e) => { isDragging = true; updatePosition(e.touches[0].clientX); }, { passive: true });
+
+  window.addEventListener('mousemove', (e) => { if (isDragging) { e.preventDefault(); updatePosition(e.clientX); } });
+  window.addEventListener('touchmove', (e) => { if (isDragging) updatePosition(e.touches[0].clientX); }, { passive: true });
+
+  window.addEventListener('mouseup', () => { isDragging = false; });
+  window.addEventListener('touchend', () => { isDragging = false; });
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', (e) => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+
+<script>
+(function() {
+  var VERT = [
+    'attribute vec2 a_position;',
+    'void main() { gl_Position = vec4(a_position, 0.0, 1.0); }'
+  ].join('\n');
+
+  var FRAG = [
+    'precision highp float;',
+    'uniform float u_time;',
+    'uniform vec2 u_resolution;',
+    '',
+    'vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }',
+    'vec4 mod289(vec4 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }',
+    'vec4 permute(vec4 x) { return mod289(((x * 34.0) + 10.0) * x); }',
+    'vec4 taylorInvSqrt(vec4 r) { return 1.79284291400159 - 0.85373472095314 * r; }',
+    '',
+    'float snoise(vec3 v) {',
+    '  const vec2 C = vec2(1.0/6.0, 1.0/3.0);',
+    '  const vec4 D = vec4(0.0, 0.5, 1.0, 2.0);',
+    '  vec3 i = floor(v + dot(v, C.yyy));',
+    '  vec3 x0 = v - i + dot(i, C.xxx);',
+    '  vec3 g = step(x0.yzx, x0.xyz);',
+    '  vec3 l = 1.0 - g;',
+    '  vec3 i1 = min(g.xyz, l.zxy);',
+    '  vec3 i2 = max(g.xyz, l.zxy);',
+    '  vec3 x1 = x0 - i1 + C.xxx;',
+    '  vec3 x2 = x0 - i2 + C.yyy;',
+    '  vec3 x3 = x0 - D.yyy;',
+    '  i = mod289(i);',
+    '  vec4 p = permute(permute(permute(',
+    '    i.z + vec4(0.0, i1.z, i2.z, 1.0))',
+    '    + i.y + vec4(0.0, i1.y, i2.y, 1.0))',
+    '    + i.x + vec4(0.0, i1.x, i2.x, 1.0));',
+    '  float n_ = 0.142857142857;',
+    '  vec3 ns = n_ * D.wyz - D.xzx;',
+    '  vec4 j = p - 49.0 * floor(p * ns.z * ns.z);',
+    '  vec4 x_ = floor(j * ns.z);',
+    '  vec4 y_ = floor(j - 7.0 * x_);',
+    '  vec4 x = x_ * ns.x + ns.yyyy;',
+    '  vec4 y = y_ * ns.x + ns.yyyy;',
+    '  vec4 h = 1.0 - abs(x) - abs(y);',
+    '  vec4 b0 = vec4(x.xy, y.xy);',
+    '  vec4 b1 = vec4(x.zw, y.zw);',
+    '  vec4 s0 = floor(b0) * 2.0 + 1.0;',
+    '  vec4 s1 = floor(b1) * 2.0 + 1.0;',
+    '  vec4 sh = -step(h, vec4(0.0));',
+    '  vec4 a0 = b0.xzyw + s0.xzyw * sh.xxyy;',
+    '  vec4 a1 = b1.xzyw + s1.xzyw * sh.zzww;',
+    '  vec3 p0 = vec3(a0.xy, h.x);',
+    '  vec3 p1 = vec3(a0.zw, h.y);',
+    '  vec3 p2 = vec3(a1.xy, h.z);',
+    '  vec3 p3 = vec3(a1.zw, h.w);',
+    '  vec4 norm = taylorInvSqrt(vec4(dot(p0,p0), dot(p1,p1), dot(p2,p2), dot(p3,p3)));',
+    '  p0 *= norm.x; p1 *= norm.y; p2 *= norm.z; p3 *= norm.w;',
+    '  vec4 m = max(0.5 - vec4(dot(x0,x0), dot(x1,x1), dot(x2,x2), dot(x3,x3)), 0.0);',
+    '  m = m * m;',
+    '  return 105.0 * dot(m*m, vec4(dot(p0,x0), dot(p1,x1), dot(p2,x2), dot(p3,x3)));',
+    '}',
+    '',
+    'void main() {',
+    '  vec2 uv = gl_FragCoord.xy / u_resolution;',
+    '  float aspect = u_resolution.x / u_resolution.y;',
+    '  vec2 p = (uv - 0.5) * vec2(aspect, 1.0);',
+    '',
+    '  float scale = 1.4;',
+    '  float timeScale = 0.18;',
+    '  float intensity = 0.30;',
+    '  float t = u_time * timeScale;',
+    '',
+    '  float n1 = snoise(vec3(p * scale, t * 0.8));',
+    '  float n2 = snoise(vec3(p * scale * 1.4 + 3.0, t * 0.6 + 10.0));',
+    '  float n3 = snoise(vec3(p * scale * 2.1 + 7.0, t * 0.4 + 20.0));',
+    '  float combined = (n1 + n2 * 0.5 + n3 * 0.25) / 1.75;',
+    '  combined = combined * intensity + 0.5;',
+    '',
+    '  vec3 c1 = vec3(0.88, 0.85, 0.81);',
+    '  vec3 c2 = vec3(0.92, 0.90, 0.86);',
+    '  vec3 c3 = vec3(0.78, 0.74, 0.68);',
+    '  vec3 c4 = vec3(0.90, 0.87, 0.83);',
+    '',
+    '  vec3 col;',
+    '  if (combined < 0.33) {',
+    '    col = mix(c1, c2, combined / 0.33);',
+    '  } else if (combined < 0.66) {',
+    '    col = mix(c2, c3, (combined - 0.33) / 0.33);',
+    '  } else {',
+    '    col = mix(c3, c4, (combined - 0.66) / 0.34);',
+    '  }',
+    '',
+    '  gl_FragColor = vec4(col, 1.0);',
+    '}'
+  ].join('\n');
+
+  function initSilk(canvasId) {
+    var canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    var gl = canvas.getContext('webgl');
+    if (!gl) return;
+
+    function makeShader(type, src) {
+      var s = gl.createShader(type);
+      gl.shaderSource(s, src);
+      gl.compileShader(s);
+      if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) { gl.deleteShader(s); return null; }
+      return s;
+    }
+
+    var vs = makeShader(gl.VERTEX_SHADER, VERT);
+    var fs = makeShader(gl.FRAGMENT_SHADER, FRAG);
+    if (!vs || !fs) return;
+
+    var prog = gl.createProgram();
+    gl.attachShader(prog, vs);
+    gl.attachShader(prog, fs);
+    gl.linkProgram(prog);
+    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) return;
+    gl.useProgram(prog);
+
+    var buf = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+    var aPos = gl.getAttribLocation(prog, 'a_position');
+    gl.enableVertexAttribArray(aPos);
+    gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 0, 0);
+
+    var uTime = gl.getUniformLocation(prog, 'u_time');
+    var uRes = gl.getUniformLocation(prog, 'u_resolution');
+
+    function resize() {
+      var dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+      canvas.width = canvas.clientWidth * dpr;
+      canvas.height = canvas.clientHeight * dpr;
+      gl.viewport(0, 0, canvas.width, canvas.height);
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    var start = performance.now();
+    var raf;
+    function render() {
+      gl.uniform1f(uTime, (performance.now() - start) / 1000);
+      gl.uniform2f(uRes, canvas.width, canvas.height);
+      gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+      raf = requestAnimationFrame(render);
+    }
+
+    new IntersectionObserver(function(entries) {
+      if (entries[0].isIntersecting) {
+        if (!raf) { start = performance.now(); render(); }
+      } else {
+        if (raf) { cancelAnimationFrame(raf); raf = null; }
+      }
+    }, { threshold: 0 }).observe(canvas);
+  }
+
+  initSilk('silk-about-services');
+})();
+</script>
+
+</body>
+</html>
